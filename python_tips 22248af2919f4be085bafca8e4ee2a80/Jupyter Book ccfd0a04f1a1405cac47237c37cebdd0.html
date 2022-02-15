@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Jupyter Book</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ccfd0a04-f1a1-405c-ac47-237c37cebdd0" class="page sans"><header><h1 class="page-title">Jupyter Book</h1></header><div class="page-body"><ul id="a710766d-0137-4231-84f0-6d85aa07b9f6" class="bulleted-list"><li style="list-style-type:disc">官網寫的實在太清楚了，我這邊就偷懶，只整理要去哪裡看就好</li></ul><ul id="d613216b-df69-4333-894e-41016679c46d" class="bulleted-list"><li style="list-style-type:disc">先到他的官網： <a href="https://jupyterbook.org/intro.html">https://jupyterbook.org/intro.html</a>  </li></ul><ul id="75c196dd-51ee-46c7-8b7e-48fcc437f16d" class="bulleted-list"><li style="list-style-type:disc">左邊有 tutorials 可以看，選 create your first book<figure id="1f228217-f8dd-4f62-ab69-38acfa11565c" class="image"><a href="Jupyter%20Book%20ccfd0a04f1a1405cac47237c37cebdd0/Untitled.png"><img style="width:303px" src="Jupyter%20Book%20ccfd0a04f1a1405cac47237c37cebdd0/Untitled.png"/></a></figure></li></ul><ul id="6302a521-d861-4038-987a-bcfa028abed3" class="bulleted-list"><li style="list-style-type:disc">接下來就實際走一次流程</li></ul><h1 id="271f040a-91d4-4815-8305-29bc02091f1c" class="">1. 安裝</h1><ul id="8d0f17ae-f5ba-4c37-8c39-a5c3f0037d4f" class="bulleted-list"><li style="list-style-type:disc">第一步先安裝 jupter book ( <code>pip install jupyter-book</code> )</li></ul><h1 id="6a461b73-9c4b-4912-8879-82b2b3c99ccc" class="">2. 開專案(導入模板)</h1><ul id="22d3a76c-0592-4476-b1bd-11777411b9d0" class="bulleted-list"><li style="list-style-type:disc">假如我想新增一個專案資料夾叫 <code>python_ds</code> ，放在 <code>/Volumes/GoogleDrive/我的雲端硬碟/0. codepool_python</code> 的下面，那我就：<pre id="56cc09f2-7d61-4c33-a0a0-04f59a79720c" class="code"><code>cd /Volumes/GoogleDrive/我的雲端硬碟/&#x27;0. codepool_python&#x27;
+jupyter-book create python_ds/ # create 這個 jupyter-book 專案</code></pre></li></ul><ul id="1df8bf0e-090a-4eac-8267-752e05db2af2" class="bulleted-list"><li style="list-style-type:disc">他就幫我新增好一個模板所需的所有檔案</li></ul><h1 id="a3cd9c76-ad01-4b5f-b370-b9dfe14fe2b7" class="">3. python 虛擬環境處理一下</h1><ul id="6851de77-864e-4ce9-9bcf-a3c98a9d268f" class="bulleted-list"><li style="list-style-type:disc">在 terminal 進到這個專案資料夾裡面</li></ul><pre id="12f9a4fa-a6ee-46db-b770-f184c556eae2" class="code"><code>cd python_ds
+python -m venv python_ds_env # 新增一個虛擬環境
+source python_ds_env/bin/activate # 開啟虛擬環境
+
+# 安裝常用套件
+pip install numpy pandas matplotlib sklearn
+
+# 安裝 jupyter notebook 的 kernel 管理工具
+# kernel 的意思就是 python interpreter，就是在 notebook 中，你要用哪個 python &amp; 對應的 package 來執行 code
+# 預設就是電腦最初安裝好的 python
+# 但我們希望 jupyter notebook 用我們的虛擬環境，所以我現在要來幫他註冊一個 kernel
+pip install ipykernel # 安裝 ipython notebook 執行時要用的 kernel 管理工具
+python -m ipykernel install --name=python_ds_env # 註冊 kernel (把我現在身處的虛擬環境，加進去，到時候跑 jupyter notebook時，就可以選這個 kernel 跑，意思就是用虛擬環境的python &amp; package 來跑) 
+
+# 把安裝好的套件，寫到 requirements.txt
+pip freeze requirements.txt</code></pre><h1 id="e7ed7217-e062-4993-9a22-8fd94024227a" class="">4. git  </h1><pre id="5d1ff709-79a9-44f2-947f-a55fa7e8178e" class="code"><code>git init
+echo python_ds_env &gt; .gitignore # 新增 .gitignore 檔案，第一行就是 python_ds_env，因為我不想把 virtual environment 也上到github上，我只要有 requirements.txt 就夠了</code></pre><h1 id="1dc112cd-8961-481a-96c5-844c80a7c540" class="">5. 用 jupyter lab進到專案</h1><ul id="57cffe57-00cc-4c3a-8d27-4efa295d75d1" class="bulleted-list"><li style="list-style-type:disc">在 terminal 中，開啟 jupyter lab</li></ul><pre id="2f498615-53dd-46c1-8097-29b1ba7a5cd7" class="code"><code>jupyter lab # 開啟 jupyter lab 服務</code></pre><ul id="22774c7b-fa16-4fb6-8d23-25f5e3ae1575" class="bulleted-list"><li style="list-style-type:disc">進到專案資料夾後，把裡面的 <code>notebooks.ipynb</code> 這個 notebook 打開，把 kernel 改成我剛剛註冊過的 <code>python_ds_env</code> 。就可確保等等這個 notebook 是用虛擬環境來跑</li></ul><ul id="442c55ed-8298-46d7-a72d-229f535cd94a" class="bulleted-list"><li style="list-style-type:disc">記得存檔</li></ul><h1 id="faf82750-41cb-4155-b9d9-7df81a88a677" class="">6. compile 出 book 來</h1><ul id="264a893c-520f-45a6-b68a-cf76194de7bd" class="bulleted-list"><li style="list-style-type:disc">現在都還不用管內容，反正資料夾裡面的都是範本，我就先 build 出一本書就對了</li></ul><ul id="1cdd55eb-06d8-45d5-98f5-71ac760492a6" class="bulleted-list"><li style="list-style-type:disc">打開 terminal，輸入： </li></ul><pre id="63e9c06d-7780-4539-88e3-14541c7ea1eb" class="code"><code>cd /Volumes/GoogleDrive/我的雲端硬碟/&#x27;0. codepool_python&#x27;/python_ds # 進到專案資料夾
+jupyter-book build . # 我要 build 一本書，用哪個路徑下的內容來 build? 用 `.` current資料夾</code></pre><h1 id="42b981de-5686-4b83-84aa-7779e79b95f2" class="">7. push 到 github  </h1><ul id="3820a035-675e-4ec2-adf1-ab18731b3fc9" class="bulleted-list"><li style="list-style-type:disc">在自己的 github 上，開一個 <code>python_ds</code> 專案，然後把東西 push 到上面去</li></ul><ul id="60ccc16a-e10d-4198-a6bf-1b0bc670cf62" class="bulleted-list"><li style="list-style-type:disc">但到目前為止，還沒辦法用 github pages 的功能，來deploy我的書。因為，github pages 只吃 <code>docs</code> 這個資料夾下的東西，但我現在書的內容，是被 build 在 <code>_build/html</code>這個資料夾底下 (而他又沒辦法像 R 的 bookdown 一樣，透過改設定，把書 build 在 <code>docs</code> 資料夾內) </li></ul><ul id="b127f5d1-ef2b-4b6a-920f-e2cbe7d410e9" class="bulleted-list"><li style="list-style-type:disc">所以，這時就參考官網的建議 (<a href="https://jupyterbook.org/start/publish.html">https://jupyterbook.org/start/publish.html</a>)<ul id="afc9e89d-146c-42df-b569-f0f6e08ca3d5" class="bulleted-list"><li style="list-style-type:circle">先安裝 <code>pip install ghp-import</code> 這個套件 (ghp = github page)</li></ul><ul id="3b81d43d-722b-49da-af72-f929780cd17c" class="bulleted-list"><li style="list-style-type:circle">直接在本地的 master 分支下，執行 <code>ghp-import -n -p -f _build/html</code> </li></ul></li></ul><ul id="a5510ff6-5265-435c-adf9-bbcfb87900d3" class="bulleted-list"><li style="list-style-type:disc">那他就會自動做以下事情：<ul id="ee34f648-189a-4bb2-ad0d-c226143ea7c5" class="bulleted-list"><li style="list-style-type:circle">在本地，先建一個 <code>gh-pages</code> 分支</li></ul><ul id="815cfc57-c861-4230-9462-69f72d6a8240" class="bulleted-list"><li style="list-style-type:circle">只留 <code>_build/html</code> 的內容在根目錄，其他檔案資料夾全刪光</li></ul><ul id="0181cbb6-617f-4adf-80d6-aefb0fae57df" class="bulleted-list"><li style="list-style-type:circle">新增一個 <code>.nojekyll</code> 的檔案 (就是上面 -n 所代表的意義， -n = touch .nojekyll)</li></ul><ul id="a6cf62f9-e1b1-44af-8089-d7b49921abbc" class="bulleted-list"><li style="list-style-type:circle">把這個分支，也推到 remote</li></ul></li></ul><ul id="e076fa36-3c60-4379-a2ba-63c9050c2e54" class="bulleted-list"><li style="list-style-type:disc">那現在 github 上，就有兩個分支，而我們只要切換到 <code>gh-pages</code> 這個分支，再去 pages 那邊設定，說我要 deploy 根目錄的內容，那就完成 deploy 了</li></ul><h1 id="34e845e0-669b-4cd5-a50f-0360beaa3718" class="">8. 開始改內容</h1><ul id="c2bf4991-06f8-419c-9c40-c044abeb6108" class="bulleted-list"><li style="list-style-type:disc">最一開始要改的，就是 專案根目錄下的 <code>_toc.yml</code> 這個檔，改成像這樣的架構：</li></ul><pre id="8acac57b-7cf0-4b56-b879-ba48e081d548" class="code"><code>format: jb-book
+root: intro
+parts:
+  - caption: Name of Part 1
+    numbered: true
+    chapters:
+    - file: markdown
+    - file: may_error
+  - caption: Name of Part 2
+    numbered: true
+    chapters:
+    - file: notebooks</code></pre><ul id="ba9475eb-118f-448e-9eed-35c00dd216f2" class="bulleted-list"><li style="list-style-type:disc">這是因為，我喜歡<ul id="a6e78a6b-534e-4c70-abc7-563fd09f7ecd" class="bulleted-list"><li style="list-style-type:circle">把章節分 block (所以才有 parts 和 caption 的設定）</li></ul><ul id="5d8dad89-dcea-40ba-842c-77280c66829d" class="bulleted-list"><li style="list-style-type:circle">章節和內文標題，都要 number (所以才有 <code>numbered: true</code> )</li></ul><ul id="dded5125-c938-49d4-b6a2-816bb3fbc263" class="bulleted-list"><li style="list-style-type:circle">然後， <code>root</code> 所指稱的 intro，是一個 <a href="http://intro.md">intro.md</a> 檔 (不一定要 md 檔，你要 .ipynb 也可)，就是指書本的第一頁，要讀哪個檔案。其實就和 bookdown 裡面的 index.html 一樣意思</li></ul><ul id="eb31608a-bbe7-4df1-8e3b-4f6c4687de41" class="bulleted-list"><li style="list-style-type:circle"></li></ul><p id="ded8972a-25cb-4e9f-a294-6dcffb9de0d3" class="">ERROR: sphinx-book-theme 0.1.10 has requirement docutils&lt;0.17,&gt;=0.15, but you&#x27;ll have docutils 0.17.1 which is incompatible.
+ERROR: myst-parser 0.15.2 has requirement mdit-py-plugins~=0.2.8, but you&#x27;ll have mdit-py-plugins 0.3.0 which is incompatible.</p><p id="ddf8e57c-e895-4922-94a6-7b23997b539c" class="">
+</p><p id="4e671287-f173-42bb-b5dd-13457c239706" class="">Failed validating &#x27;required&#x27; in notebook[&#x27;properties&#x27;][&#x27;metadata&#x27;][&#x27;properties&#x27;][&#x27;kernelspec&#x27;]:</p></li></ul></div></article></body></html>
